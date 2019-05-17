@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Remote screenshot</title>
+
+    <script>
+        function performMakeScreenshotRequest() {fetch('/api/screenshot', {
+                method: 'POST'
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    console.log(JSON.stringify(data))
+                 })
+                .catch(resp => alert('Ooops, error!'))
+        }
+    </script>
+
+</head>
+
+<body>
+Hello world
+<button onClick="performMakeScreenshotRequest()"> Make a screenshot </button>
+</body>
+</html>
